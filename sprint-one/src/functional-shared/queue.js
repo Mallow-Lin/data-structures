@@ -7,6 +7,7 @@ var Queue = function() {
     first: 0,
     last: 0,
   };
+  //Use _.extend  to copy the queueMethods onto the someInstance
   _.extend(someInstance, queueMethods);
   return someInstance;
 };
@@ -17,7 +18,7 @@ var queueMethods = {
     this.storage[this.last] = value;
     this.last++;
   },
-  //return and remove top value in the stack object
+  //return and remove bottom value in the stack object
   dequeue: function() {
     if (this.first === this.last) {
       return undefined;

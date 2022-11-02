@@ -5,6 +5,7 @@ var Stack = function() {
     storage: {},
     key: 0
   };
+    //Use _.extend  to copy the stackMethods onto the someInstance
   _.extend(someInstance, stackMethods);
   return someInstance;
 };
@@ -20,7 +21,7 @@ var stackMethods = {
     if (this.key > 0) {
       this.key--;
       var value = this.storage[this.key];
-      delete this.storage[this.key];
+      delete value;
       return value;
     }
   },

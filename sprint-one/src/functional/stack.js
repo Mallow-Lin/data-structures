@@ -16,7 +16,7 @@ var Stack = function() {
     if (key > 0) { //if the storage {} is !undefined
       key--; //latest key -=1
       var value = storage[key];
-      delete storage.key; //delete the last property from the storage{}
+      delete value; //delete the last property from the storage{}
       return value; //return the popped value;
     }
   };

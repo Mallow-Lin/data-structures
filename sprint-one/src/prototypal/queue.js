@@ -11,18 +11,16 @@ var Queue = function() {
 
 var queueMethods = {
   enqueue: function(value) {
-    this.storage[this.first] = value;
     this.storage[this.last] = value;
     this.last++;
   },
   dequeue: function() {
-    if (this.first === this.last) {
-      return undefined;
+    if (this.first < this.last) {
+      var value = this.storage[this.first];
+      delete value;
+      this.first++;
+      return value;
     }
-    var value = this.storage[this.first];
-    delete value;
-    this.first++;
-    return value;
   },
   size: function() {
     return this.last - this.first;

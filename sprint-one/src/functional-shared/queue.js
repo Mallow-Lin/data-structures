@@ -20,13 +20,12 @@ var queueMethods = {
   },
   //return and remove bottom value in the stack object
   dequeue: function() {
-    if (this.first === this.last) {
-      return undefined;
+    if (this.first < this.last) {
+      var value = this.storage[this.first];
+      delete value;
+      this.first++;
+      return value;
     }
-    var value = this.storage[this.first];
-    delete value;
-    this.first++;
-    return value;
   },
   //check size of stack
   size: function() {

@@ -14,14 +14,13 @@ var Queue = function() {
   };
 
   someInstance.dequeue = function() {
-    if (first === last) { //if the storage {} is empty
-      return undefined;
+    if (first < last) { //if the storage {} is !empty
+      var value = storage[first];
+      delete storage.first; //delete the first property from the storage{}
+      first++; //the first key will shift with += 1
+      return value; // return the shifted value
     }
-    var value = storage[first];
-    delete storage.first; //delete the first property from the storage{}
-    first++; //the first key will shift with += 1
-    return value; // return the shifted value
-  };
+  },
 
   someInstance.size = function() {
     return last - first;

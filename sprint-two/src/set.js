@@ -8,7 +8,7 @@ var setPrototype = {};
 
 setPrototype.add = function(item) {
   //if item already exists in set storage don't do anything, don't push
-  console.log(this.storage);
+  // console.log(this.storage);
   if (!this.storage.includes(item)) {
     this.storage.push(item);
   }
@@ -31,4 +31,7 @@ setPrototype.remove = function(item) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+    add - linear time
+    remove - linear time
+    contains - linear time
  */

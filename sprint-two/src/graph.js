@@ -17,6 +17,7 @@ Graph.prototype.addNode = function(node) {
   this.nodes[node] = new GraphNode(node);
 };
 
+
 Graph.prototype.contains = function(node) {
   if (this.nodes[node]) {
     return true;
@@ -74,6 +75,12 @@ Graph.prototype.forEachNode = function(cb) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+  addNode - constant time
+  removeNode - linear time
+  hasEdge - linear time
+  addEdge - constant time
+  contains - constant time
+  forEachNode - linear time
  */
 
 
